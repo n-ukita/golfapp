@@ -13,7 +13,8 @@ class GolfController extends Controller
 {
     public function add()
     {
-        return view('admin.golf.create');
+        $links=Link::all(); 
+        return view('admin.golf.create',['links'=>$links]);
     }
 
     public function create(Request $request)
@@ -23,7 +24,7 @@ class GolfController extends Controller
 
         $course = new Course;
         $form = $request->all();
-    
+
         //フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
 

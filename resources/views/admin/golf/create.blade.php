@@ -22,7 +22,15 @@
                   <div class="form-group row">
                       <label class="col-md-2" for="link_id">ゴルフ場名</label>
                       <div class="col-md-10">
-                          <input type="text" class="form-control" name="link_id" value="{{ old('link_id') }}"> 
+                          <select name="link_id" id="select4">
+                          @foreach( $links as $link)
+                              <option value="{{ $link->id }}" 
+                                @if(old( 'link_id' ) == $link->id) "selected"
+                                @endif>
+                                {{ $link->golfcourse }}
+                              </option>
+                          @endforeach
+                          </select>
                       </div>
                   </div>
                   <div class="form-group row">
@@ -91,4 +99,4 @@
             </div>
         </div>
     </div>
-@endsection    
+@endsection
