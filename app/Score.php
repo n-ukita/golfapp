@@ -13,5 +13,8 @@ class Score extends Model
         'play_date' => 'required',
         'course_id' => 'required',
     );
-    
+         public function users()
+    {
+        return $this->hasMany('App\users');
+    }
 }

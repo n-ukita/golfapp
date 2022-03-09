@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('golf/links', 'Admin\LinksController@create')->middleware('auth');
     Route::get('golf/index', 'Admin\LinksController@index')->middleware('auth');
     Route::get('golf/score', 'Admin\ScoreController@add')->middleware('auth');
+    Route::post('golf/score', 'Admin\ScoreController@create')->middleware('auth');
 });
 Auth::routes();
 

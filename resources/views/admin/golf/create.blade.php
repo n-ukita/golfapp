@@ -23,6 +23,7 @@
                       <label class="col-md-2" for="link_id">ゴルフ場名</label>
                       <div class="col-md-10">
                           <select name="link_id" id="select4">
+                          <option value="golfcourse_select">ゴルフ場を選択してください</option>
                           @foreach( $links as $link)
                               <option value="{{ $link->id }}" 
                                 @if(old( 'link_id' ) == $link->id) "selected"
