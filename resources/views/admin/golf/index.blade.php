@@ -46,11 +46,18 @@
                             </tr>
                         </thead>
                     <tbody>
+                        @php
+                        $check = "";
+                        @endphp
                         @foreach($posts as $value)
-                        @foreach($value->courses as $course)
-                             <tr>
+                        <tr>
                                  <th>{{ $value->id }}</th>
                                  <td>{{ str_limit($value->golfcourse, 100) }}</td>
+                                 @if(isset($value->courses))
+                            @foreach($value->courses as $course)
+                            @if($check == $value->id)
+                                 <th></th><td></td>
+                                 @endif        
                                  <td>{{ str_limit($course->hole, 20) }}</td>
                                  <td>{{ str_limit($course->HP1, 4) }}</td>
                                  <td>{{ str_limit($course->HP2, 4) }}</td>
@@ -61,9 +68,15 @@
                                  <td>{{ str_limit($course->HP7, 4) }}</td>
                                  <td>{{ str_limit($course->HP8, 4) }}</td>
                                  <td>{{ str_limit($course->HP9, 4) }}</td>
-                             </tr>
-                             @endforeach
-                        @endforeach         
+                                 </tr><tr>
+                            @php
+                              $check = $value->id
+                            @endphp
+                            @endforeach
+                            @endif
+                            </tr>
+                        @endforeach    
+
                     </tbody>
                     </table>
                 </div>

@@ -28,4 +28,8 @@ class Course extends Model
     {
         return $this->belongsTo('App\Link');
     }
+    public function scores()
+    {
+        return $this->belongsTo('App\Score');
+    }
 }

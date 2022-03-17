@@ -33,7 +33,7 @@
                      <div class="form-group row">
                          <label class="col-md-2" for="play_date">プレー日</label>
                          <div class="col-md-6">
-                            <input type="text" class="form-control" name="play_date" value="{{ old('play_date') }}">
+                            <input type="date" class="form-control" name="play_date" value="{{ old('play_date') }}">
                          </div>
                      </div> 
                      <div class="form-group row">
@@ -50,6 +50,20 @@
                           @endforeach
                           </select>
                       </div>
+                     </div>
+                     <div class="form-group row">
+                         <label class="col-md-2" for="first_half">前半</label>
+                        <div class="col-md-4">
+                            <select name="first_half" id="select1">
+                                @foreach( $courses as $course)
+                                  <option value="{{ $course->id }}"
+                                      @if(old( 'first_half' ) == $course->id) "selected"
+                                      @endif>
+                                      {{ $course->hole }}
+                                  </option>
+                                @endforeach  
+                            </select>
+                        </div>
                      </div>   
                  </form>
              </div>

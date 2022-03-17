@@ -17,4 +17,8 @@ class Score extends Model
     {
         return $this->hasMany('App\users');
     }
+         public function courses()
+    {
+        return $this->hasMany('App\courses');
+    }     
 }

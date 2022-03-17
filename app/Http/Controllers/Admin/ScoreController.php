@@ -9,6 +9,8 @@ use App\User;
 
 use App\Link;
 
+use App\Course;
+
 class ScoreController extends Controller
 {
     //
@@ -16,11 +18,12 @@ class ScoreController extends Controller
     {
         $users=User::all();
         $links=Link::all();
-        return view('admin.golf.score',['users'=>$users],['links'=>$links]);
+        $courses=Course::all();
+        return view('admin.golf.score',['users'=>$users,'links'=>$links,'courses'=>$courses]);
     }
 
     public function create()
     {
-        return redirect('admin.golf.score');
+        return redirect('admin.golf.scorecreate');
     }
 }
