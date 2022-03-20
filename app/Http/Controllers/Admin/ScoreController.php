@@ -11,6 +11,8 @@ use App\Link;
 
 use App\Course;
 
+use App\Score;
+
 class ScoreController extends Controller
 {
     //
@@ -22,8 +24,21 @@ class ScoreController extends Controller
         return view('admin.golf.score',['users'=>$users,'links'=>$links,'courses'=>$courses]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return redirect('admin.golf.scorecreate');
+                //Varidationを行う
+                $this->validate($request, Score::$rules);
+
+                $score = new Score;
+                $form = $request->all();
+        
+                //フォームから送信されてきた_tokenを削除する
+                unset($form['_token']);
+        
+                //データベースに保存する
+                $score->fill($form);
+                $score->save();
+        
+        return redirect('admin/golf/score');
     }
 }
