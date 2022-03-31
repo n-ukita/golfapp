@@ -11,7 +11,7 @@ class Score extends Model
     public static $rules = array(
         'user_id' => 'required',
         'play_date' => 'required',
-        'course_id' => 'required',
+        'link_id' => 'required',
     );
          public function users()
     {
@@ -20,5 +20,9 @@ class Score extends Model
          public function courses()
     {
         return $this->hasMany('App\courses');
-    }     
+    } 
+         public function link()
+    {
+        return $this->belongsTo('App\Link');
+    }         
 }

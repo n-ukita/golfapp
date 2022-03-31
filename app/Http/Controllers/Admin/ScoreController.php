@@ -21,6 +21,7 @@ class ScoreController extends Controller
         $users=User::all();
         $links=Link::all();
         $courses=Course::all();
+        $scores=Score::all();
         return view('admin.golf.score',['users'=>$users,'links'=>$links,'courses'=>$courses]);
     }
 
@@ -41,4 +42,29 @@ class ScoreController extends Controller
         
         return redirect('admin/golf/score');
     }
+    
+    public function index(Request $request)
+    {
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            // 検索されたら検索結果を取得する
+            $posts = Score::leftjoin('links','scores.link_id','=','links.id')
+             ->where('golfcourse', 'like', "%$cond_title%")->get();
+        } else {
+            // それ以外はすべてのゴルフ場名を取得する
+            $posts = Score::all();
+
+        }
+        
+        return view('admin.golf.scoreindex', ['posts' => $posts, 'cond_title' => $cond_title]);
+    }
+
+    public function sheet(Request $request)
+    {
+
+
+        return view('admin.golf.scoresheet');
+    }
+
+
 }

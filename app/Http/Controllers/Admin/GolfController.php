@@ -40,7 +40,7 @@ class GolfController extends Controller
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
-            $posts = Course::where('golfcourse', 'like', "%$cond_title%")->get();
+            $posts = Link::where('golfcourse', 'like', "%$cond_title%")->get();
         } else {
             // それ以外はすべてのゴルフ場名を取得する
             $posts = Link::all();
