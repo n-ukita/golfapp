@@ -52,12 +52,12 @@
                       </div>
                      </div>
                      <div class="form-group row">
-                         <label class="col-md-1" for="half">ハーフ</label>
+                         <label class="col-md-1" for="course_id">ハーフ</label>
                         <div class="col-md-2">
-                            <select name="half" id="select1">
+                            <select name="course_id" id="select1">
                                 @foreach( $courses as $course)
                                   <option value="{{ $course->id }}"
-                                      @if(old( 'half' ) == $course->id) "selected"
+                                      @if(old( 'course_id' ) == $course->id) "selected"
                                       @endif>
                                       {{ $course->hole }}
                                   </option>
@@ -66,9 +66,9 @@
                         </div>
                      </div> 
                      <div class="form-group row">
-                      <label class="col-md-1" for="1">1(10)</label>
+                      <label class="col-md-1" for="c1">1(10)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="1" value="{{ old('1') }}">
+                          <input type="text" class="form-control" name="c1" value="{{ old('c1') }}">
                       </div>
                       <label class="col-md-1" for="putt1">パット数</label>
                       <div class="col-md-1">
@@ -76,9 +76,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="2">2(11)</label>
+                      <label class="col-md-1" for="c2">2(11)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="2" value="{{ old('2') }}">
+                          <input type="text" class="form-control" name="c2" value="{{ old('c2') }}">
                       </div>
                       <label class="col-md-1" for="putt2">パット数</label>
                       <div class="col-md-1">
@@ -86,9 +86,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="3">3(12)</label>
+                      <label class="col-md-1" for="c3">3(12)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="3" value="{{ old('3') }}">
+                          <input type="text" class="form-control" name="c3" value="{{ old('c3') }}">
                       </div>
                       <label class="col-md-1" for="putt3">パット数</label>
                       <div class="col-md-1">
@@ -96,9 +96,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="4">4(13)</label>
+                      <label class="col-md-1" for="c4">4(13)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="4" value="{{ old('4') }}">
+                          <input type="text" class="form-control" name="c4" value="{{ old('c4') }}">
                       </div>
                       <label class="col-md-1" for="putt4">パット数</label>
                       <div class="col-md-1">
@@ -106,9 +106,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="5">5(14)</label>
+                      <label class="col-md-1" for="c5">5(14)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="5" value="{{ old('5') }}">
+                          <input type="text" class="form-control" name="c5" value="{{ old('c5') }}">
                       </div>
                       <label class="col-md-1" for="putt5">パット数</label>
                       <div class="col-md-1">
@@ -116,9 +116,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="6">6(15)</label>
+                      <label class="col-md-1" for="c6">6(15)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="6" value="{{ old('6') }}">
+                          <input type="text" class="form-control" name="c6" value="{{ old('c6') }}">
                       </div>
                       <label class="col-md-1" for="putt6">パット数</label>
                       <div class="col-md-1">
@@ -126,9 +126,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="7">7(16)</label>
+                      <label class="col-md-1" for="c7">7(16)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="7" value="{{ old('7') }}">
+                          <input type="text" class="form-control" name="c7" value="{{ old('c7') }}">
                       </div>
                       <label class="col-md-1" for="putt7">パット数</label>
                       <div class="col-md-1">
@@ -136,9 +136,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="8">8(17)</label>
+                      <label class="col-md-1" for="c8">8(17)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="8" value="{{ old('8') }}">
+                          <input type="text" class="form-control" name="c8" value="{{ old('c8') }}">
                       </div>
                       <label class="col-md-1" for="putt8">パット数</label>
                       <div class="col-md-1">
@@ -146,9 +146,9 @@
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label class="col-md-1" for="9">9(18)</label>
+                      <label class="col-md-1" for="c9">9(18)</label>
                       <div class="col-md-1">
-                          <input type="text" class="form-control" name="9" value="{{ old('9') }}">
+                          <input type="text" class="form-control" name="c9" value="{{ old('c9') }}">
                       </div>
                       <label class="col-md-1" for="putt9">パット数</label>
                       <div class="col-md-1">

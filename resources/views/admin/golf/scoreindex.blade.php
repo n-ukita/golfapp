@@ -41,9 +41,9 @@
                           @foreach($posts->unique('play_date') as $scores)
                              <tr>
                                <th>{{ $scores->play_date }}</th>
-                               <th>{{$scores->link->golfcourse }}</th>
-                               <th>{{ $scores->c1 + $scores->c2 + $scores->c3 + $scores->c4 + $scores->c5 + $scores->c6 + $scores->c7 + $scores->c8 + $scores->c9 }}</th>
-                               <th><a href="{{ action('Admin\ScoreController@sheet') }}" role="button" class="btn btn-primary">スコアシート</a></th>
+                               <th>{{ $scores->link->golfcourse }}</th>
+                               <th>{{ $scores->getSumC($scores->link_id,$scores->play_date)}}</th>
+                               <th><a href="{{ action('Admin\ScoreController@sheet',['play_date'=> $scores->play_date,'link_id'=> $scores->link_id]) }}" role="button" class="btn btn-primary">スコアシート</a></th>
                           @endforeach  
                              </tr>  
 

@@ -95,8 +95,13 @@
                       </div>
                   </div>
                   {{ csrf_field() }}
+                  <div class="form-group row">
                   <input type="submit" class="btn btn-primary" value="更新">
+                  </div>
                 </form>  
+                  <div class="form-group row">
+                     <a href="{{ action('Admin\GolfController@index') }}" role="button" class="btn btn-primary">ゴルフ場一覧</a>
+                  </div>  
             </div>
         </div>
     </div>

@@ -53,7 +53,7 @@ class ScoreController extends Controller
         } else {
             // それ以外はすべてのゴルフ場名を取得する
             $posts = Score::all();
-
+            
         }
         
         return view('admin.golf.scoreindex', ['posts' => $posts, 'cond_title' => $cond_title]);
@@ -61,9 +61,11 @@ class ScoreController extends Controller
 
     public function sheet(Request $request)
     {
+            $scores = Score::where('play_date',$request->play_date)->where('link_id',$request->link_id)->orderBy('created_at','asc')->get();
 
+            
 
-        return view('admin.golf.scoresheet');
+        return view('admin.golf.scoresheet',['scores' => $scores]);
     }
 
 

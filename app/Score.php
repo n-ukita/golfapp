@@ -13,16 +13,31 @@ class Score extends Model
         'play_date' => 'required',
         'link_id' => 'required',
     );
-         public function users()
+
+    public function users()
     {
         return $this->hasMany('App\users');
     }
-         public function courses()
+
+    public function course()
     {
-        return $this->hasMany('App\courses');
+        return $this->belongsTo('App\Course');
     } 
-         public function link()
+
+    public function link()
     {
         return $this->belongsTo('App\Link');
-    }         
+    } 
+
+    public function  getSumC($link_id,$play_date)
+    {
+        $scores = $this->where('play_date',$play_date)->where('link_id',$link_id)->get();
+        $total = 0;
+        foreach($scores as $score)
+        { 
+            $total += $score->c1 + $score->c2 + $score->c3 + $score->c4 + $score->c5 + $score->c6 + $score->c7 + $score->c8 + $score->c9;
+        }
+        return $total;
+
+    }
 }
