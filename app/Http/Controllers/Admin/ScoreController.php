@@ -68,5 +68,11 @@ class ScoreController extends Controller
         return view('admin.golf.scoresheet',['scores' => $scores]);
     }
 
+    public function toppage(Request $request)
+    {
+        
+        return view('admin.golf.toppage');
+    }
+
 
 }

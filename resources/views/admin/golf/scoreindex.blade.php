@@ -42,25 +42,21 @@
                              <tr>
                                <th>{{ $scores->play_date }}</th>
                                <th>{{ $scores->link->golfcourse }}</th>
-                               <th>{{ $scores->getSumC($scores->link_id,$scores->play_date)}}</th>
+                               <th>{{ $scores->getSumC()}}</th>
                                <th><a href="{{ action('Admin\ScoreController@sheet',['play_date'=> $scores->play_date,'link_id'=> $scores->link_id]) }}" role="button" class="btn btn-primary">スコアシート</a></th>
                           @endforeach  
                              </tr>  
-
-
-
                         </tbody>
-
                     </table>
-
                 </div>
-
             </div>
-
         </div>
-
-
-
+        <div class="form-group row">
+                <a href="{{ action('Admin\GolfController@index') }}" role="button" class="btn btn-primary">ゴルフ場一覧</a>
+         </div>  
+         <div class="form-group row">
+                <a href="{{ action('Admin\ScoreController@toppage') }}" role="button" class="btn btn-primary">TOP</a>
+         </div>  
 
     </div>    
 

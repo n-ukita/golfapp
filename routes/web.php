@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('golf/score', 'Admin\ScoreController@create')->middleware('auth');
     Route::get('golf/scoreindex', 'Admin\ScoreController@index')->middleware('auth');
     Route::get('golf/scoresheet', 'Admin\ScoreController@sheet')->middleware('auth');
+    Route::get('golf/toppage', 'Admin\ScoreController@toppage')->middleware('auth');
 });
 Auth::routes();
 

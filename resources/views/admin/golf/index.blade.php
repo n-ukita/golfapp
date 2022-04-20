@@ -86,6 +86,10 @@
                 <a href="{{ action('Admin\ScoreController@add') }}" role="button" class="btn btn-primary">スコア登録</a>
         </div>  
         <div class="form-group row">
+                <a href="{{ action('Admin\ScoreController@index') }}" role="button" class="btn btn-primary">スコア一覧</a>
+        </div>  
+
+        <div class="form-group row">
                 <a href="{{ action('Admin\LinksController@index') }}" role="button" class="btn btn-primary">ゴルフ場所在地</a>
         </div>  
     </div>

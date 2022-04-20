@@ -38,6 +38,17 @@ class User extends Authenticatable
     ];
     public function scores()
     {
-        return $this->hasMany('App\scores');
+        return $this->hasMany('App\Score');
     }
+    public function getBestScore(){
+        $scores = $this->scores;
+        $best = $scores[0];
+        foreach($scores as $score){
+            if($score->getSumC() < $best->getSumC()){
+                $best = $score;
+            }
+        }
+        return $best;
+    }
+
 }

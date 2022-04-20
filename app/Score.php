@@ -16,7 +16,7 @@ class Score extends Model
 
     public function users()
     {
-        return $this->hasMany('App\users');
+        return $this->hasMany('App\User');
     }
 
     public function course()
@@ -29,9 +29,9 @@ class Score extends Model
         return $this->belongsTo('App\Link');
     } 
 
-    public function  getSumC($link_id,$play_date)
+    public function  getSumC()
     {
-        $scores = $this->where('play_date',$play_date)->where('link_id',$link_id)->get();
+        $scores = $this->where('play_date',$this->play_date)->where('link_id',$this->link_id)->get();
         $total = 0;
         foreach($scores as $score)
         { 
