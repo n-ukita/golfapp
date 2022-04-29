@@ -7,6 +7,9 @@ if (! function_exists('record')) {
     function record($num)
     {
         switch ($num) {
+            case -3:
+                $str = "☆";
+                break;
             case -2:
                 $str = "◎";
                 break;

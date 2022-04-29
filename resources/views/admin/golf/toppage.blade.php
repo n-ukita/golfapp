@@ -25,7 +25,14 @@
                                   <th>日付</th>
                                   <th>{{ Auth::user()->getBestScore()->play_date }}</th>
                               </tr>
-
+                              <tr>
+                                  <th>平均スコア</th>
+                                  <th>{{ Auth::user()->getAverageScore() }}</th>
+                              </tr>
+                              <tr>
+                                  <th>平均パット</th>
+                                  <th>{{ Auth::user()->getAveragePutt() }}</th>
+                              </tr>
 
                                 
 

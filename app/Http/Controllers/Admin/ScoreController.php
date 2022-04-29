@@ -70,7 +70,6 @@ class ScoreController extends Controller
 
     public function toppage(Request $request)
     {
-        
         return view('admin.golf.toppage');
     }
 

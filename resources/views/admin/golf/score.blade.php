@@ -39,7 +39,7 @@
                      <div class="form-group row">
                      <label class="col-md-1" for="link_id">ゴルフ場</label>
                       <div class="col-md-10">
-                          <select name="link_id" id="select4">
+                          <select name="link_id" id="select1">
                           <option value="golfcourse_select">ゴルフ場を選択してください</option>
                           @foreach( $links as $link)
                               <option value="{{ $link->id }}" 
@@ -54,7 +54,7 @@
                      <div class="form-group row">
                          <label class="col-md-1" for="course_id">ハーフ</label>
                         <div class="col-md-2">
-                            <select name="course_id" id="select1">
+                            <select name="course_id" id="select2">
                                 @foreach( $courses as $course)
                                   <option value="{{ $course->id }}"
                                       @if(old( 'course_id' ) == $course->id) "selected"

@@ -40,4 +40,17 @@ class Score extends Model
         return $total;
 
     }
+
+    public function  getSumP()
+    {
+        $scores = $this->where('play_date',$this->play_date)->where('link_id',$this->link_id)->get();
+        $total_P = 0;
+        foreach($scores as $score)
+        { 
+            $total_P += $score->putt1 + $score->putt2 + $score->putt3 + $score->putt4 + $score->putt5 + $score->putt6 + $score->putt7 + $score->putt8 + $score->putt9;
+        }
+        return $total_P;
+    }    
+
+
 }

@@ -51,4 +51,21 @@ class User extends Authenticatable
         return $best;
     }
 
+    public function getAverageScore(){
+        $total_score = 0;
+        foreach($this->scores as $score){
+            $total_score += $score->getSumC();
+        }
+        return $total_score / count($this->scores);
+    }
+
+    public function getAveragePutt(){
+        $total_P_score = 0;
+        foreach($this->scores as $score){
+            $total_P_score += $score->getSumP();
+        }
+        return $total_P_score / count($this->scores);
+    }
+
+
 }
